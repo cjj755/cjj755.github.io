@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wai {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            position: relative;
+
+            margin: 300px 0 0 300px;
+        }
+
+        .nei {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .border {
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            /* transform: rotate(90deg); */
+        }
+
+        .circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wai">
+        <div class="nei"></div>
+        <div id="border" class="border">
+            <div class="circle"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    (function(){
+        var deg = 0;
+        setInterval(function(){
+            ++deg;
+            var border = document.getElementById("border");
+            border.setAttribute('style', `transform: rotate(${deg}deg)`)
+            if( deg === 360 ){
+                deg = 0;
+            }
+        },10)
+    })();
+</script>
+</html>
